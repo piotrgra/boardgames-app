@@ -1,0 +1,19 @@
+<main>
+  <div class="login-container">
+    <div class="login-icon">🎲</div>
+    <h1>Ranking Gier</h1>
+    <p class="login-description">
+      Wybierz swoje imię, aby zalogować się i tworzyć własne tier listy gier
+      planszowych.
+    </p>
+    <label class="select-label" for="username">Wybierz użytkownika:</label>
+    <select id="username" [(ngModel)]="selectedUser">
+      <option value="">-- Wybierz --</option>
+      <option value="Tomek">Tomek</option>
+      <option value="Damian">Damian</option>
+      <option value="Piotr">Piotr</option>
+    </select>
+
+    <button (click)="login()">Zaloguj</button>
+  </div>
+</main>
