@@ -19,14 +19,16 @@ export class LoginComponent implements OnInit {
       alert('Proszę wybrać imię.');
       return;
     }
+
     localStorage.setItem('loggedInUser', this.selectedUser);
-    this.router.navigate(['/main']);
+    this.router.navigate(['/dashboard']);
   }
 
   ngOnInit(): void {
     const user = localStorage.getItem('loggedInUser');
+
     if (user) {
-      this.router.navigate(['/main']);
+      this.router.navigate(['/dashboard']);
     }
   }
 }
