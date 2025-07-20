@@ -1,1 +1,9 @@
-<p>dashboard works!</p>
+<div>
+  <h2>Test Firebase</h2>
+  <button (click)="loadGames()">Pobierz gry</button>
+  <ul>
+    @for (game of games; track game.gameId) {
+      <li>{{ game.name }}</li>
+    }
+  </ul>
+</div>
