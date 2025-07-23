@@ -1,27 +1,23 @@
-<section class="tierlist my-tierlist" id="my-tierlist">
-  <h2>👤 Twoja Tier Lista</h2>
-
-  @for (tier of tiers; track tier) {
-    <div class="tier-row" [attr.data-tier]="tier.label">
-      <div
-        class="tier-label"
-        [attr.data-tier]="tier.label"
-        [style.backgroundColor]="tier.color"
-      >
-        {{ tier.label }}
-      </div>
-
-      <div class="tier-slot" [id]="tier.id">
-        @for (game of tierGames[tier.label]; track game) {
-          <div class="game-card">
-            <img [src]="game.image" [alt]="game.name" />
-            <span>{{ game.name }}</span>
-            <button>Usuń</button>
-          </div>
-        }
-      </div>
+@for (tier of tiers; track tier) {
+  <div class="tier-row" [attr.data-tier]="tier.label">
+    <div
+      class="tier-label"
+      [attr.data-tier]="tier.label"
+      [style.backgroundColor]="tier.color"
+    >
+      {{ tier.label }}
     </div>
-  }
 
-  <button (click)="saveTierList()">💾 Zapisz tier listę</button>
-</section>
+    <div class="tier-slot" [id]="tier.id">
+      @for (game of tierGames[tier.label]; track game) {
+        <div class="game-card">
+          <img [src]="game.image" [alt]="game.name" />
+          <span>{{ game.name }}</span>
+          <button>Usuń</button>
+        </div>
+      }
+    </div>
+  </div>
+}
+
+<button (click)="saveTierList()">💾 Zapisz tier listę</button>

@@ -1,4 +1,20 @@
-<app-sidebar></app-sidebar>
-<app-add-game></app-add-game>
-<app-game-list></app-game-list>
-<app-tier-list></app-tier-list>
+<div class="app">
+  <app-sidebar></app-sidebar>
+
+  <main class="content">
+    <!-- Moja Tier Lista -->
+    <section class="tierlist my-tierlist" id="my-tierlist">
+      <app-tier-list type="personal"></app-tier-list>
+    </section>
+
+    <!-- Dodawanie gier -->
+    <section class="add-game" id="add-game">
+      <app-add-game></app-add-game>
+    </section>
+
+    <!-- Zapisane gry -->
+    <section class="saved-games" id="saved-games">
+      <app-game-list [games]="games()"></app-game-list>
+    </section>
+  </main>
+</div>

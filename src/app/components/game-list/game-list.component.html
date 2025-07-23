@@ -1,17 +1,14 @@
-<section class="saved-games" id="saved-games">
-  <h2>💾 Twoje zapisane gry</h2>
-
-  @if (games.length > 0) {
-    <div class="game-grid">
-      @for (game of games; track game.name) {
-        <div class="game-card">
-          <img [src]="game.image" [alt]="game.name" />
-          <span>{{ game.name }}</span>
-          <button (click)="removeGame(game)">Usuń</button>
-        </div>
-      }
-    </div>
-  } @else {
-    <p>Brak zapisanych gier.</p>
-  }
-</section>
+<h2>💾 Twoje zapisane gry</h2>
+@if (games.length > 0) {
+  <div class="game-grid">
+    @for (game of games; track game.name) {
+      <div class="game-card">
+        <img [ngSrc]="game.thumbnail" [alt]="game.name" height="100" width="100" />
+        <span>{{ game.name }}</span>
+        <button (click)="removeGame(game)">Usuń</button>
+      </div>
+    }
+  </div>
+} @else {
+  <p>Brak zapisanych gier.</p>
+}

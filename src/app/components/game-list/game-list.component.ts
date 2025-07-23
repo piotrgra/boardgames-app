@@ -1,19 +1,18 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { NgOptimizedImage } from '@angular/common';
+import { Game } from '../../types/types';
 
 @Component({
   selector: 'app-game-list',
   templateUrl: './game-list.component.html',
   styleUrls: ['./game-list.component.scss'],
+  imports: [NgOptimizedImage],
 })
 export class GameListComponent implements OnInit {
-  games: Array<{ name: string; image: string }> = [];
+  @Input()
+  games: Game[] = [];
 
-  ngOnInit(): void {
-    this.games = [
-      { name: 'Terraforming Mars', image: 'https://via.placeholder.com/100?text=TM' },
-      { name: 'Catan', image: 'https://via.placeholder.com/100?text=Catan' },
-    ];
-  }
+  ngOnInit(): void {}
 
   removeGame(index: any): void {
     this.games.splice(index, 1);

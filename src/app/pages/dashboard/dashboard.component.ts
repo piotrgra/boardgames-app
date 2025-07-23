@@ -1,9 +1,11 @@
 import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
-import { Firestore, collection, getDocs } from '@angular/fire/firestore';
 import { SidebarComponent } from '../../components/sidebar/sidebar.component';
 import { AddGameComponent } from '../../components/add-game/add-game.component';
 import { GameListComponent } from '../../components/game-list/game-list.component';
 import { TierListComponent } from '../../components/tier-list/tier-list.component';
+import { GameService } from '../../services/game.service';
+import { AsyncPipe } from '@angular/common';
+import { toSignal } from '@angular/core/rxjs-interop';
 
 @Component({
   selector: 'app-dashboard',
@@ -13,17 +15,9 @@ import { TierListComponent } from '../../components/tier-list/tier-list.componen
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class DashboardComponent {
-  private readonly firestore: Firestore;
-  games: any[] = [];
+  private readonly gameService = inject(GameService);
 
-  constructor() {
-    this.firestore = inject(Firestore);
-  }
-
-  async loadGames() {
-    const ref = collection(this.firestore, 'games');
-    const snapshot = await getDocs(ref);
-    this.games = snapshot.docs.map((doc) => doc.data());
-    console.log(this.games);
-  }
+  games = toSignal(this.gameService.getGames(), {
+    initialValue: [],
+  });
 }
