@@ -1,0 +1,21 @@
+<section class="add-game" id="add-game">
+  <h2>➕ Dodaj grę z BGG</h2>
+  <form (submit)="addGame(); $event.preventDefault()">
+    <input
+      type="number"
+      [(ngModel)]="bggId"
+      name="bggId"
+      placeholder="BGG Game ID"
+      required
+    />
+    <button type="submit">➕ Dodaj</button>
+  </form>
+
+  @if (gamePreview) {
+    <div id="gamePreview" class="game-card">
+      <img [src]="gamePreview.image" alt="{{ gamePreview.name }}" />
+      <span>{{ gamePreview.name }}</span>
+      <button (click)="gamePreview = null">Usuń</button>
+    </div>
+  }
+</section>

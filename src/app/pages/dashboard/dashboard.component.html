@@ -1,9 +1,4 @@
-<div>
-  <h2>Test Firebase</h2>
-  <button (click)="loadGames()">Pobierz gry</button>
-  <ul>
-    @for (game of games; track game.gameId) {
-      <li>{{ game.name }}</li>
-    }
-  </ul>
-</div>
+<app-sidebar></app-sidebar>
+<app-add-game></app-add-game>
+<app-game-list></app-game-list>
+<app-tier-list></app-tier-list>

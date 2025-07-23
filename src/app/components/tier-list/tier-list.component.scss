@@ -1,0 +1,53 @@
+.my-tierlist {
+  background-color: #ffffff;
+  border-radius: 10px;
+  padding: 20px 25px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  border-left: 4px solid #2ecc71;
+  margin-bottom: 40px;
+}
+
+.tier-row {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.tier-label {
+  width: 40px;
+  height: 40px;
+  font-size: 18px;
+  font-weight: bold;
+  color: white;
+  border-radius: 6px;
+  text-align: center;
+  line-height: 40px;
+}
+
+.tier-slot {
+  flex: 1;
+  min-height: 100px;
+  padding: 10px;
+  background: linear-gradient(to bottom right, #ffffff, #f4f6f8);
+  border: 2px dashed #dcdcdc;
+  border-radius: 8px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+button {
+  padding: 10px 20px;
+  background-color: #2ecc71;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+button:hover {
+  background-color: #27ae60;
+}

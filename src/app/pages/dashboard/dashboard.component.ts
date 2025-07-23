@@ -1,9 +1,13 @@
 import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { Firestore, collection, getDocs } from '@angular/fire/firestore';
+import { SidebarComponent } from '../../components/sidebar/sidebar.component';
+import { AddGameComponent } from '../../components/add-game/add-game.component';
+import { GameListComponent } from '../../components/game-list/game-list.component';
+import { TierListComponent } from '../../components/tier-list/tier-list.component';
 
 @Component({
   selector: 'app-dashboard',
-  imports: [],
+  imports: [SidebarComponent, AddGameComponent, GameListComponent, TierListComponent],
   templateUrl: './dashboard.component.html',
   styleUrl: './dashboard.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
